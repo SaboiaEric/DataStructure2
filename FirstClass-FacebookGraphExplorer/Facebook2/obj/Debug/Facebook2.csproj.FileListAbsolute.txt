@@ -1,0 +1,9 @@
+C:\Users\140730\Desktop\EDA2-LAB\Facebook2\Facebook2\bin\Debug\Facebook2.exe.config
+C:\Users\140730\Desktop\EDA2-LAB\Facebook2\Facebook2\bin\Debug\Facebook2.exe
+C:\Users\140730\Desktop\EDA2-LAB\Facebook2\Facebook2\bin\Debug\Facebook2.pdb
+C:\Users\140730\Desktop\EDA2-LAB\Facebook2\Facebook2\obj\Debug\Facebook2.csprojResolveAssemblyReference.cache
+C:\Users\140730\Desktop\EDA2-LAB\Facebook2\Facebook2\obj\Debug\Facebook2.exe
+C:\Users\140730\Desktop\EDA2-LAB\Facebook2\Facebook2\obj\Debug\Facebook2.pdb
+C:\Projetos\DataStructure2\FirstClass-FacebookGraphExplorer\Facebook2\bin\Debug\Facebook2.exe.config
+C:\Projetos\DataStructure2\FirstClass-FacebookGraphExplorer\Facebook2\obj\Debug\Facebook2.exe
+C:\Projetos\DataStructure2\FirstClass-FacebookGraphExplorer\Facebook2\obj\Debug\Facebook2.pdb
