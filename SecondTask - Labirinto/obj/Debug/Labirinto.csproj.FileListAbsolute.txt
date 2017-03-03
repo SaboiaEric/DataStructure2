@@ -6,3 +6,4 @@ C:\Projetos\DataStructure2\SecondTask - Labirinto\bin\Debug\Labirinto.exe
 C:\Projetos\DataStructure2\SecondTask - Labirinto\bin\Debug\Labirinto.pdb
 C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.exe
 C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.pdb
+C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.csprojResolveAssemblyReference.cache

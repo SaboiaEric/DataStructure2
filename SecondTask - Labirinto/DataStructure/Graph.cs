@@ -22,6 +22,11 @@ namespace ProjetoGrafos.DataStructure
             return true;
         }
 
+        /// <summary>
+        /// Passeio em profundidade
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public List<Node> DepthFirstSearch(string name)
         {
             Node node = new Node();
@@ -29,14 +34,26 @@ namespace ProjetoGrafos.DataStructure
             return nodeList;
         }
 
+        /// <summary>
+        /// Passeio em largura
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public List<Node> BreadthFirstSearch(string name)
         {
+            
             Node node = new Node();
             List<Node> nodeList = new List<Node>();
 
             return nodeList;
         }
 
+        /// <summary>
+        /// Menor caminho
+        /// </summary>
+        /// <param name="nameIn"></param>
+        /// <param name="nameOut"></param>
+        /// <returns></returns>
         public List<Node> ShortestPath(string nameIn, string nameOut)
         {
             Node node = new Node();

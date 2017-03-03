@@ -13,17 +13,30 @@ namespace Labirinto
 
     public partial class Principal : Form
     {
-        // Buracos
+        /// <summary>
+        /// Buracos
+        /// </summary>
         private List<Point> buracos;
-        // Lamas
+        
+        /// <summary>
+        /// Lamas
+        /// </summary>
         private List<Point> lamas;
-        // Player 
+        
+        /// <summary>
+        /// Players
+        /// </summary>
         private Point player, saida;
-        // Grafo
+        
+        /// <summary>
+        /// Grafo
+        /// </summary>
         private static Graph grafo;
         private static PictureBox pbMaze;
 
-        // Construtor
+        /// <summary>
+        /// Construtor
+        /// </summary>
         public Principal( )
         {
 
@@ -116,7 +129,11 @@ namespace Labirinto
             pbMaze.Image = GUI.DesenhaLabirinto( buracos, lamas, player, saida );
         }
 
-        // Criando o grafo
+        /// <summary>
+        /// Create graph
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGrafo_Click( object sender, EventArgs e )
         {
             grafo = new Graph( );
@@ -175,7 +192,12 @@ namespace Labirinto
             
         }
 
-        // Encontra um buraco na lista de buracos
+        /// <summary>
+        /// Find a hole in the list holes
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
         private int FindHole(int x, int y)
         {
             for ( int i=buracos.Count-1; i >=0; i-- )
