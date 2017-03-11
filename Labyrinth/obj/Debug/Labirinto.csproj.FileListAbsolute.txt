@@ -7,3 +7,6 @@ C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\
 C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.csproj.GenerateResource.Cache
 C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.exe
 C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.pdb
+C:\Projetos\DataStructure2\Labyrinth\bin\Debug\Labirinto.exe.config
+C:\Projetos\DataStructure2\Labyrinth\obj\Debug\Labirinto.exe
+C:\Projetos\DataStructure2\Labyrinth\obj\Debug\Labirinto.pdb

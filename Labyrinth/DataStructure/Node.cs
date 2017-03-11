@@ -81,6 +81,11 @@ namespace ProjetoGrafos.DataStructure
             this.Edges.Add(new Edge(this, to, cost));
         }
 
+        public void AddEdge(Edge edge)
+        {
+            this.Edges.Add(edge);
+        }
+
         #endregion
 
         #region Métodos Sobrescritos
