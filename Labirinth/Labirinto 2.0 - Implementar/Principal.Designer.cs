@@ -37,7 +37,10 @@ namespace Labirinto
             this.btnLargura = new System.Windows.Forms.Button();
             this.btnProfundidade = new System.Windows.Forms.Button();
             this.btnMinimo = new System.Windows.Forms.Button();
+            this.nudCustoLama = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCustoLama)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -102,9 +105,9 @@ namespace Labirinto
             // 
             // btnGrafo
             // 
-            this.btnGrafo.Location = new System.Drawing.Point(392, 150);
+            this.btnGrafo.Location = new System.Drawing.Point(392, 178);
             this.btnGrafo.Name = "btnGrafo";
-            this.btnGrafo.Size = new System.Drawing.Size(164, 53);
+            this.btnGrafo.Size = new System.Drawing.Size(167, 45);
             this.btnGrafo.TabIndex = 3;
             this.btnGrafo.Text = "Criar o Grafo";
             this.btnGrafo.UseVisualStyleBackColor = true;
@@ -112,9 +115,9 @@ namespace Labirinto
             // 
             // btnLargura
             // 
-            this.btnLargura.Location = new System.Drawing.Point(392, 209);
+            this.btnLargura.Location = new System.Drawing.Point(392, 229);
             this.btnLargura.Name = "btnLargura";
-            this.btnLargura.Size = new System.Drawing.Size(167, 55);
+            this.btnLargura.Size = new System.Drawing.Size(167, 45);
             this.btnLargura.TabIndex = 4;
             this.btnLargura.Text = "Passeio Largura";
             this.btnLargura.UseVisualStyleBackColor = true;
@@ -122,9 +125,9 @@ namespace Labirinto
             // 
             // btnProfundidade
             // 
-            this.btnProfundidade.Location = new System.Drawing.Point(392, 270);
+            this.btnProfundidade.Location = new System.Drawing.Point(392, 280);
             this.btnProfundidade.Name = "btnProfundidade";
-            this.btnProfundidade.Size = new System.Drawing.Size(167, 53);
+            this.btnProfundidade.Size = new System.Drawing.Size(167, 45);
             this.btnProfundidade.TabIndex = 5;
             this.btnProfundidade.Text = "Passeio Profundidade";
             this.btnProfundidade.UseVisualStyleBackColor = true;
@@ -132,19 +135,47 @@ namespace Labirinto
             // 
             // btnMinimo
             // 
-            this.btnMinimo.Location = new System.Drawing.Point(392, 329);
+            this.btnMinimo.Location = new System.Drawing.Point(392, 331);
             this.btnMinimo.Name = "btnMinimo";
-            this.btnMinimo.Size = new System.Drawing.Size(167, 51);
+            this.btnMinimo.Size = new System.Drawing.Size(167, 45);
             this.btnMinimo.TabIndex = 6;
             this.btnMinimo.Text = "CaminhoMinimo";
             this.btnMinimo.UseVisualStyleBackColor = true;
             this.btnMinimo.Click += new System.EventHandler(this.btnMinimo_Click);
+            // 
+            // nudCustoLama
+            // 
+            this.nudCustoLama.Location = new System.Drawing.Point(488, 150);
+            this.nudCustoLama.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCustoLama.Name = "nudCustoLama";
+            this.nudCustoLama.Size = new System.Drawing.Size(71, 22);
+            this.nudCustoLama.TabIndex = 7;
+            this.nudCustoLama.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(389, 152);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Custo Lama:";
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 392);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nudCustoLama);
             this.Controls.Add(this.btnMinimo);
             this.Controls.Add(this.btnProfundidade);
             this.Controls.Add(this.btnLargura);
@@ -156,7 +187,9 @@ namespace Labirinto
             this.Text = "Labirinto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCustoLama)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -171,6 +204,8 @@ namespace Labirinto
         private System.Windows.Forms.Button btnProfundidade;
         private System.Windows.Forms.Button btnMinimo;
         private System.Windows.Forms.RadioButton rbLama;
+        private System.Windows.Forms.NumericUpDown nudCustoLama;
+        private System.Windows.Forms.Label label1;
     }
 }
 

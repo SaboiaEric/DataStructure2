@@ -1,0 +1,9 @@
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\bin\Debug\Labirinto.exe.config
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\bin\Debug\Labirinto.exe
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\bin\Debug\Labirinto.pdb
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.csprojResolveAssemblyReference.cache
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.Principal.resources
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.Properties.Resources.resources
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.csproj.GenerateResource.Cache
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.exe
+C:\Users\140730\Desktop\Labirinto 2.0 - Implementar\Labirinto 2.0 - Implementar\obj\Debug\Labirinto.pdb

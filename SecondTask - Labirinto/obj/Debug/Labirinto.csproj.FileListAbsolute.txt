@@ -1,9 +1,0 @@
-C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.Principal.resources
-C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.Properties.Resources.resources
-C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.csproj.GenerateResource.Cache
-C:\Projetos\DataStructure2\SecondTask - Labirinto\bin\Debug\Labirinto.exe.config
-C:\Projetos\DataStructure2\SecondTask - Labirinto\bin\Debug\Labirinto.exe
-C:\Projetos\DataStructure2\SecondTask - Labirinto\bin\Debug\Labirinto.pdb
-C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.exe
-C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.pdb
-C:\Projetos\DataStructure2\SecondTask - Labirinto\obj\Debug\Labirinto.csprojResolveAssemblyReference.cache
