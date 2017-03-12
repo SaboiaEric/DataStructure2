@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,26 +22,60 @@ namespace ProjetoGrafos.DataStructure
 
         public List<Node> BreadthFirstSearch(string begin)
         {
-            return null;
+            ClearVisited();
+            Node searchNode = listNode.Find(x => x.Name.Equals(begin));
+            if (begin == null)
+                return null;
+
+            List<Node> breadth = new List<Node>();
+            Queue queue = new Queue();
+            queue.Enqueue(searchNode);
+            while (queue.Count > 0)
+            {
+                Node current = (Node)queue.Dequeue();
+                if (current.Visited)
+                    continue;
+                current.Visited = true;
+                breadth.Add(current);
+                foreach (Node element in GetNeighborhood(current.Name))
+                {
+                    if (element.Visited)
+                        continue;
+                    element.Parent = current;
+                    queue.Enqueue(element);
+                }
+            }
+
+            return breadth;
         }
 
         public List<Node> DepthFirstSearch(string begin)
         {
+            ClearVisited();
             Node searchNode = listNode.Find(x => x.Name.Equals(begin));
             if (begin == null)
                 return null;
-            
+
+            List<Node> depth = new List<Node>();
             Stack stack = new Stack();
             stack.Push(searchNode);
-            while (stack.Peek() != null)
+            while (stack.Count > 0)
             {
                 Node current = (Node)stack.Pop();
                 if (current.Visited)
                     continue;
                 current.Visited = true;
+                depth.Add(current);
+                foreach (Node element in GetNeighborhood(current.Name))
+                {
+                    if (element.Visited)
+                        continue;
+                    element.Parent = current;
+                    stack.Push(element);
+                }
             }
 
-            return null;
+            return depth;
         }
 
         public void AddNode(string name, object info)
@@ -75,16 +110,22 @@ namespace ProjetoGrafos.DataStructure
         
         public List<Node> GetNeighborhood(string name)
         {
-            Node current = new Node();
-            if (listNode.Find(x => x.Name.Equals(name)) != null)
-                throw new Exception("Opa, este nome que nos informou não existe. Quer nos passar algum outro? :) ");
+            if (listNode.Find(x => x.Name.Equals(name)) == null)
+                throw new Exception("Opa, este nome que nos informou não existe. Nos passe algum outro? :) ");
 
+            Node current = new Node();
             current = listNode.Find(x => x.Name.Equals(name));
             List <Node> neighborhoods = new List<Node>();
             foreach (Edge element in current.Edges)
                 neighborhoods.Add(element.To);
 
             return neighborhoods.ToList<Node>();
+        }
+
+        public void ClearVisited()
+        {
+            foreach (Node element in listNode)
+                element.Visited = false;
         }
     }
 }
