@@ -39,7 +39,7 @@ namespace PrimAndKruskal
                         Console.WriteLine("Impossível criar este arco!");
                     break;
                 case 3:
-                    getPrim();
+                    getPrim(graph);
                     break;
                 case 4:
                     break;
@@ -79,9 +79,16 @@ namespace PrimAndKruskal
             return true;
         }
 
-        public static void getPrim()
+        public static void getPrim(Graph mainGraph)
         {
+            //Creating solution graph
+            Graph solutionGraph = new Graph();
+            
+            var allNodes = mainGraph.listNode.ToList();
+            while(solutionGraph.listNode.Exists(x => x.Name.Equals(allNodes.)))
 
+            
+            
         }
     }
 }
