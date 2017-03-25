@@ -1,4 +1,5 @@
-﻿using ProjetoGrafos.DataStructure;
+﻿using PrimAndKruskal.DataStructure;
+using ProjetoGrafos.DataStructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace PrimAndKruskal
 {
-    class Program
+    public class Program
     {
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Escolha uma opção: ");
@@ -18,21 +20,26 @@ namespace PrimAndKruskal
             Console.WriteLine("4 - Kruskal");
             Graph graph = new Graph();
             var opcao = "1";
-            while(!(opcao.Equals("1") || opcao.Equals("2") || opcao.Equals("3") || opcao.Equals("4"))){
+            while (!(opcao.Equals("1") || opcao.Equals("2") || opcao.Equals("3") || opcao.Equals("4")))
+            {
                 opcao = string.Empty;
-                opcao= Console.ReadLine();
+                opcao = Console.ReadLine();
             }
             int op = Convert.ToInt32(opcao);
             //Creating graph
-            
+
             switch (op)
             {
                 case 1:
-                    getNodes();
+                    if (!addNode(graph))
+                        Console.WriteLine("Nome do nó já existente!");
                     break;
                 case 2:
-                    break;  
-                case 3 :
+                    if (!addEdge(graph))
+                        Console.WriteLine("Impossível criar este arco!");
+                    break;
+                case 3:
+                    getPrim();
                     break;
                 case 4:
                     break;
@@ -44,6 +51,36 @@ namespace PrimAndKruskal
             int firstNode = Convert.ToInt32(Console.ReadLine());
             int secondNode = Convert.ToInt32(Console.ReadLine());
             int edge = Convert.ToInt32(Console.ReadLine());
+
+        }
+        public static bool addNode(Graph currentGraph)
+        {
+            string nameNode = Console.ReadLine().ToUpper();
+
+            if (currentGraph.listNode.Exists(x => x.Name.Equals(nameNode)))
+                return false;
+            else
+                currentGraph.AddNode(nameNode, null);
+
+            return true;
+        }
+
+        public static bool addEdge(Graph currentGraph)
+        {
+            string firstNodeName = Console.ReadLine().ToUpper();
+            string secondNodeName = Console.ReadLine().ToUpper();
+            int edgeValue = Convert.ToInt32(Console.ReadLine());
+            //check nodes
+            if (!(currentGraph.listNode.Exists(x => x.Name.Equals(firstNodeName)) && currentGraph.listNode.Exists(x => x.Name.Equals(secondNodeName))))
+                currentGraph.AddEdge(firstNodeName, secondNodeName, edgeValue);
+            else
+                return false;
+
+            return true;
+        }
+
+        public static void getPrim()
+        {
 
         }
     }

@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoGrafos.DataStructure
+namespace PrimAndKruskal.DataStructure
 {
     /// <summary>
     /// Classe que representa um grafo.
     /// </summary>
     public class Graph
     {
-        List<Node> listNode = new List<Node>();
+        public List<Node> listNode = new List<Node>();
  
         public List<Node> ShortestPath(string begin, string end)
         {
@@ -102,8 +102,11 @@ namespace ProjetoGrafos.DataStructure
                 throw new Exception("Os nomes informalidos são inválidos. Tente outros.");
             else
             {
-                Edge edge = new Edge(nodeFrom, nodeTo, cost);
-                nodeFrom.AddEdge(edge);
+                Edge edgeFrom = new Edge(nodeFrom, nodeTo, cost);
+                nodeFrom.AddEdge(edgeFrom);
+
+                Edge edgeTo = new Edge(nodeTo, nodeFrom, cost);
+                nodeTo.AddEdge(edgeTo);
             }
             
         }

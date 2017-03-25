@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoGrafos.DataStructure
+namespace PrimAndKruskal.DataStructure
 {
     /// <summary>
     /// Classe que representa um nó dentro de um grafo.
