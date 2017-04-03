@@ -16,3 +16,6 @@ C:\Projetos\DataStructure2\Labyrinth\obj\Debug\Labirinto.csprojResolveAssemblyRe
 C:\Projetos\DataStructure2\Labyrinth\obj\Debug\Labirinto.Principal.resources
 C:\Projetos\DataStructure2\Labyrinth\obj\Debug\Labirinto.Properties.Resources.resources
 C:\Projetos\DataStructure2\Labyrinth\obj\Debug\Labirinto.csproj.GenerateResource.Cache
+C:\Users\140730\Source\Repos\DataStructure2\Labyrinth\bin\Debug\Labirinto.exe.config
+C:\Users\140730\Source\Repos\DataStructure2\Labyrinth\obj\Debug\Labirinto.exe
+C:\Users\140730\Source\Repos\DataStructure2\Labyrinth\obj\Debug\Labirinto.pdb
