@@ -17,7 +17,60 @@ namespace ProjetoGrafos.DataStructure
  
         public List<Node> ShortestPath(string begin, string end)
         {
-            return null;
+            ClearVisited();
+            Node startNode = listNode.Find(x => x.Name.Equals(begin));
+            Node endNode = listNode.Find(x => x.Equals(end));
+
+            double minimun_distance = 1000;
+            Node shorter = null;
+
+            Graph solutionGraph = new Graph();
+            solutionGraph.AddNode(startNode);
+
+            //Verify if endNode exist in graph solution
+            while (solutionGraph.listNode.Find(x => x == endNode) == null)
+            {
+                minimun_distance = 1000;
+                shorter = null;
+                //Visit all nodes of the solution graph
+                foreach (var node in solutionGraph.listNode)
+                {                   
+                    //Visit all edges of the current node
+                    foreach (var edges in node.Edges)
+                    {
+                        //Verify if node name to exist in solution graph
+                        if (solutionGraph.listNode.Find(x => x.Name.Equals(edges.To.Name)) == null)
+                        {
+                            var auxNode = listNode.Find(x => x.Name.Equals(edges.To.Name));
+                            auxNode.Length = edges.Cost + node.Length;
+
+                            if (auxNode.Length < minimun_distance)
+                            {
+                                minimun_distance = auxNode.Length;
+                                shorter = auxNode;
+                                shorter.Parent = node;
+                            }
+                        }
+                    }
+                }
+
+                solutionGraph.AddNode(shorter);
+            }
+
+            List<Node> result = new List<Node>();
+            Node rNode = shorter;
+
+            while (rNode != startNode)
+            {
+                if (result.Find(x => x.Name.Equals(rNode.Name)) == null)
+                    result.Add(rNode);
+                rNode = rNode.Parent;
+                result.Add(rNode);
+            }
+
+            result.Reverse();
+
+            return result;
         }
 
         public List<Node> BreadthFirstSearch(string begin)
@@ -85,6 +138,11 @@ namespace ProjetoGrafos.DataStructure
 
             Node newNode = new Node(name,info);
             listNode.Add(newNode);
+        }
+
+        public void AddNode(Node node)
+        {
+            listNode.Add(node);
         }
 
         public void RemoveNode(string name)

@@ -35,6 +35,7 @@ namespace ProjetoGrafos.DataStructure
         /// </summary>
         public List<Edge> Edges { get; private set; }
 
+        public double Length { get; set; }
         #endregion
 
         #region Construtores
