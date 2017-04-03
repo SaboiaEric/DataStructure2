@@ -19,55 +19,68 @@ namespace ProjetoGrafos.DataStructure
         {
             ClearVisited();
             Node startNode = listNode.Find(x => x.Name.Equals(begin));
-            Node endNode = listNode.Find(x => x.Equals(end));
 
             double minimun_distance = 1000;
-            Node shorter = null;
+            Node shorterNode = null;
 
             Graph solutionGraph = new Graph();
             solutionGraph.AddNode(startNode);
-
-            //Verify if endNode exist in graph solution
-            while (solutionGraph.listNode.Find(x => x == endNode) == null)
+            
+            //Verifica se o nó 'end' está no grafo solução
+            while (solutionGraph.listNode.Find(x => x.Name.Equals(end)) == null)
             {
                 minimun_distance = 1000;
-                shorter = null;
-                //Visit all nodes of the solution graph
+                shorterNode = null;
+                //Visita todos os nós do grafo solução
                 foreach (var node in solutionGraph.listNode)
                 {                   
-                    //Visit all edges of the current node
+                    //Visita todos os arcos do nó atual que está no grafo solução
                     foreach (var edges in node.Edges)
                     {
-                        //Verify if node name to exist in solution graph
+                        //Verifica se o nome do nó 'PARA' já existe na lista de nós do grafo solução
                         if (solutionGraph.listNode.Find(x => x.Name.Equals(edges.To.Name)) == null)
                         {
+                            //Caso não esteja, ele é enviado para um nó auxiliar
                             var auxNode = listNode.Find(x => x.Name.Equals(edges.To.Name));
+                            //A distância até o nó auxiliar será a soma do custo do arco mais o tamanho até o nó atual
                             auxNode.Length = edges.Cost + node.Length;
 
+                            //Se a distância até este nó auxiliar, que é o nó 'PARA' do arco for menor que a distância minima
                             if (auxNode.Length < minimun_distance)
                             {
+                                //Distância minima recebe a distância do nó
                                 minimun_distance = auxNode.Length;
-                                shorter = auxNode;
-                                shorter.Parent = node;
+                                //O menor nó recebe o nó auxiliar
+                                shorterNode = auxNode;
+                                //O menor nó recebe como pai o nó atual do grafo.
+                                shorterNode.Parent = node;
                             }
                         }
                     }
                 }
-
-                solutionGraph.AddNode(shorter);
+                //Adiciona o nó com menor distância no grafo solução.
+                solutionGraph.AddNode(shorterNode);
             }
 
+            //Cria a lista de nós
             List<Node> result = new List<Node>();
-            Node rNode = shorter;
+            Node rNode = (shorterNode == null)? startNode: shorterNode;
 
+            //Enquanto o menor nó for diferente do nó inicial
+            if (rNode == startNode)
+                result.Add(rNode);
             while (rNode != startNode)
             {
+                //Verifica se o nome do menor nó está na lista de resultado
                 if (result.Find(x => x.Name.Equals(rNode.Name)) == null)
-                    result.Add(rNode);
+                    result.Add(rNode); //Se não estiver adiciona nó mais curto na lista de resultado
+                //O nó mais curto recebe o teu parent
                 rNode = rNode.Parent;
+                //O nó mais curto atual, que era o pai do nó mais curto na linha superior é também adicionado na lista de resultado.
                 result.Add(rNode);
             }
 
+            //Reverte a lista de nós resultado
             result.Reverse();
 
             return result;
