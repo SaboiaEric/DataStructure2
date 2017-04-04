@@ -196,7 +196,10 @@ namespace ProjetoGrafos.DataStructure
         public void ClearVisited()
         {
             foreach (Node element in listNode)
+            {
                 element.Visited = false;
+                element.Parent = null;
+            }
         }
     }
 }
