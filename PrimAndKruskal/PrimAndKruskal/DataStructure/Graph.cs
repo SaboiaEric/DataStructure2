@@ -87,6 +87,7 @@ namespace PrimAndKruskal.DataStructure
             listNode.Add(newNode);
         }
 
+
         public void RemoveNode(string name)
         {
             // Search the node in the list and remove him
@@ -94,7 +95,7 @@ namespace PrimAndKruskal.DataStructure
                 listNode.Remove(listNode.Find(x => x.Name.Equals(name)));
         }
 
-        public void AddEdge(string nameFrom, string nameTo, int cost)
+        public void AddEdge(string nameFrom, string nameTo, double cost)
         {
             Node nodeFrom  = listNode.Find(x => x.Name.Equals(nameFrom));
             Node nodeTo = listNode.Find(x => x.Name.Equals(nameTo));
