@@ -47,6 +47,10 @@ namespace PrimAndKruskal.DataStructure
             this.Edges = new List<Edge>();
         }
 
+        public Node(string name)
+        {
+            this.Name = name;
+        }
         /// <summary>
         /// Cria um novo nó.
         /// </summary>
