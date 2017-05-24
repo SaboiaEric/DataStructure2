@@ -7,7 +7,8 @@
     <ProjectGuid>{D69A277F-034B-4522-85FF-85EC4AEBB2E9}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>App.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>EP</AssemblyName>
@@ -114,7 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PriorityQueue.cs" />
-    <Content Include="App.ico" />
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
