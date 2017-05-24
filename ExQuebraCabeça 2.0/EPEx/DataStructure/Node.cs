@@ -40,7 +40,7 @@ namespace ProjetoGrafos.DataStructure
         /// </summary>
         public Node()
         {
-            this.Edges = new List<Edge>();
+            CreateEdgesList();
         }
 
         /// <summary>
@@ -53,14 +53,16 @@ namespace ProjetoGrafos.DataStructure
             this.Name = name;
             this.Info = info;
             this.Nivel = nivel;
+            CreateEdgesList();
         }
 
         public Node(string name, object info)
         {
             this.Name = name;
             this.Info = info;
+            CreateEdgesList();
         }
-        
+
 
         #endregion
 
@@ -72,7 +74,7 @@ namespace ProjetoGrafos.DataStructure
         /// <param name="to">O nó destino.</param>
         public void AddEdge(Node to)
         {
-            AddEdge(to);
+            AddEdge(to, 0);
         }
 
         /// <summary>
@@ -85,6 +87,10 @@ namespace ProjetoGrafos.DataStructure
             this.Edges.Add(new Edge(this, to, cost));
         }
 
+        public void CreateEdgesList()
+        {
+            this.Edges = new List<Edge>();
+        }
         #endregion
 
         #region Métodos Sobrescritos

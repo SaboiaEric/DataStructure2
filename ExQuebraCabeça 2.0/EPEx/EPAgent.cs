@@ -115,7 +115,8 @@ namespace EP
             int[] currentState = (int[])n.Info;
             int[] newState = currentState;
 
-            int i = Convert.ToInt32(SearchForZero(currentState));
+            string returned = SearchForZero(currentState);
+            int i = (string.IsNullOrEmpty(returned))? 0 : Convert.ToInt32(returned);
             //É possível ir para a esquerda.
             if(i != 0 && i!=3 && i!= 6)
             {
