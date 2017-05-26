@@ -56,7 +56,6 @@ namespace EP
             while (fila.Count > 0)
             {
                 Node atual = fila.Dequeue();
-
                 if (TargetFound(atual))
                     return BuildAnswer(atual);
 
@@ -154,6 +153,11 @@ namespace EP
             return seq.ToArray();
         }
 
+        /// <summary>
+        /// Verifica se o resultado foi encontrado, se encontrar retorna true
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         private bool TargetFound(Node n)
         {
             int[] v = (int[])n.Info;

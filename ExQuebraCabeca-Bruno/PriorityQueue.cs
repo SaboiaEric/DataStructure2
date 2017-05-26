@@ -8,6 +8,7 @@ namespace EP
 {
     public class PriorityQueue
     {
+        private Dictionary<object, Node> dicionario;
         private List<Node> lista;
         public int Count { get; set; }
         public PriorityQueue()
@@ -24,6 +25,7 @@ namespace EP
         public Node Dequeue()
         {
             Node n = lista[0];
+            
             lista.Remove(n);
             Count--;
             return n;
