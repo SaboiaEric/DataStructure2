@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoGrafos.DataStructure
+namespace FluxoMaximoDeDados.DataStructure
 {
     /// <summary>
     /// Classe que representa um nó dentro de um grafo.
@@ -58,6 +58,11 @@ namespace ProjetoGrafos.DataStructure
             this.Name = name;
             this.Info = info;
             this.Nivel = nivel;
+        }
+
+        public Node(string name)
+        {
+            this.Name = name;
         }
         
 
