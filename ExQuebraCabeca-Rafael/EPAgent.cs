@@ -44,7 +44,7 @@ namespace EP
 
             Node n0 = this.Find(GetName(initState));
             n0.Nivel = 0;
-            fila.Enqueue(CalcularHeuristica(n0), 0, n0);
+            fila.Enqueue(n0.HeuristicValue(), 0, n0);
 
             while (fila.Count > 0)
             {
@@ -68,7 +68,7 @@ namespace EP
 
                         Node nf = this.Find(ns.Name);
                         nf.Nivel = n.Nivel + 1;
-                        fila.Enqueue(CalcularHeuristica(nf), nf.Nivel, nf);
+                        fila.Enqueue(nf.HeuristicValue(), nf.Nivel, nf);
                     }
                 }
             }

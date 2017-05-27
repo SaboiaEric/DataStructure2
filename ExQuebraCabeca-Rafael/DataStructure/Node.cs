@@ -14,6 +14,7 @@ namespace ProjetoGrafos.DataStructure
 
         #region Propriedades
 
+        public int heuristicValue { get; set; }
         /// <summary>
         /// O nome do nó dentro do grafo.
         /// </summary>
@@ -71,6 +72,7 @@ namespace ProjetoGrafos.DataStructure
         public void AddEdge(Node to)
         {
             AddEdge(to, 0);
+            heuristicValue = -1;
         }
 
         /// <summary>
@@ -81,8 +83,32 @@ namespace ProjetoGrafos.DataStructure
         public void AddEdge(Node to, double cost)
         {
             this.Edges.Add(new Edge(this, to, cost));
+            heuristicValue = -1;
         }
 
+        public int HeuristicValue()
+        {
+            if (heuristicValue == -1)
+                heuristicValue = Heuristic((int[])Info);
+            return heuristicValue;
+        }
+        private int Heuristic(int[] v)
+        {
+            int value = 0;
+            int size = (int)Math.Sqrt(v.Length);
+            for (int i = 0; i < v.Length; i++)
+            {
+                if (v[i] != 0)
+                {
+                    int currentX = i / size;
+                    int currentY = i % size;
+                    int targetX = v[i] / size;
+                    int targetY = v[i] % size;
+                    value += Math.Abs(targetY - currentY) + Math.Abs(targetX - currentX);
+                }
+            }
+            return value;
+        }//usar HEAP
         #endregion
 
         #region Métodos Sobrescritos
