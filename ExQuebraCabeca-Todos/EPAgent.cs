@@ -51,20 +51,22 @@ namespace EP
                 Node n = fila.Dequeue();
 
                 if (TargetFound(n))
+                {
                     return BuildAnswer(n);
+                }
 
                 foreach (var ns in GetSucessors(n))
                 {
-                    if (this.Find(GetName((int[])ns.Value.Info)) == null)
-                    {                      
-                        this.AddNode(GetName((int[])ns.Value.Info), ns.Value.Info);
-                        
-                        //Find zero and get cost
+                    if (this.Find(GetName((int[])ns.Info)) == null)
+                    {
                         int pb = FindSpace((int[])n.Info);
-                        int mov = ((int[])ns.Value.Info)[pb];
-                        this.AddEdge(ns.Value.Name, n.Name, mov);
+                        int mov = ((int[])ns.Info)[pb];
 
-                        Node nf = this.Find(ns.Value.Name);
+                       
+                        this.AddNode(GetName((int[])ns.Info), ns.Info);
+                        this.AddEdge(ns.Name, n.Name, mov);
+
+                        Node nf = this.Find(ns.Name);
                         nf.Nivel = n.Nivel + 1;
                         fila.Enqueue(nf.HeuristicValue(), nf.Nivel, nf);
                     }
@@ -74,9 +76,9 @@ namespace EP
             return null;
         }
 
-        private Dictionary<int,Node> GetSucessors(Node n)
+        private List<Node> GetSucessors(Node n)
         {
-            Dictionary<int, Node> res = new Dictionary<int, Node>();
+            List<Node> res = new List<Node>();
 
             int[] vn = (int[])n.Info;
 
@@ -86,7 +88,6 @@ namespace EP
             int x = b / size;
             int y = b % size;
 
-
             if(x-1 >= 0)
             {
                 int[] v1 = (int[])vn.Clone();
@@ -95,7 +96,7 @@ namespace EP
                 v1[nb] = 0;
 
                 Node nf = new Node(GetName(v1), v1, n.Nivel + 1);
-                res.Add(nf.GetHashCode(),nf);
+                res.Add(nf);
             }
             if(x+1 < size)
             {
@@ -105,7 +106,7 @@ namespace EP
                 v2[nb] = 0;
 
                 Node nf = new Node(GetName(v2), v2, n.Nivel + 1);
-                res.Add(nf.GetHashCode(), nf);
+                res.Add(nf);
             }
             if (y-1 >= 0)
             {
@@ -115,7 +116,7 @@ namespace EP
                 v3[nb] = 0;
 
                 Node nf = new Node(GetName(v3), v3, n.Nivel + 1);
-                res.Add(nf.GetHashCode(), nf);
+                res.Add(nf);
             }
             if(y+1 < size)
             {
@@ -125,7 +126,7 @@ namespace EP
                 v4[nb] = 0;
 
                 Node nf = new Node(GetName(v4), v4, n.Nivel + 1);
-                res.Add(nf.GetHashCode(), nf);
+                res.Add(nf);
             }
 
             return res;

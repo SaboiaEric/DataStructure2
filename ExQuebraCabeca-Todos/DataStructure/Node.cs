@@ -97,10 +97,18 @@ namespace ProjetoGrafos.DataStructure
             int value = 0;
             int size = (int)Math.Sqrt(v.Length);
             for (int i = 0; i < v.Length; i++)
+            {
                 if (v[i] != 0)
-                    value += Math.Abs((v[i] % size) - (i % size)) + Math.Abs((v[i] / size) - (i / size));
+                {
+                    int currentX = i / size;
+                    int currentY = i % size;
+                    int targetX = v[i] / size;
+                    int targetY = v[i] % size;
+                    value += Math.Abs(targetY - currentY) + Math.Abs(targetX - currentX);
+                }
+            }
             return value;
-        }
+        }//usar HEAP
         #endregion
 
         #region Métodos Sobrescritos
